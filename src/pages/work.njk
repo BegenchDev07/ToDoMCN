@@ -4,9 +4,7 @@ layout: layouts/base.njk
 permalink: /work/
 eleventyNavigation:
   key: Work
-  order: 1
+  order: 2
 ---
-
-<p>Your awesome content goes here.</p>
-
-<img class="mt-8" src="/img/example-image.jpg" alt="">
+{% set jobslist = collections.jobs %}
+{% include "components/jobslist.njk" %}

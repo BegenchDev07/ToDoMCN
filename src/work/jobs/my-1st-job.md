@@ -1,8 +1,8 @@
 ---
-layout: layouts/post.njk
-title: My first post
-description: The first post on the blog
-date: 2020-08-01
+layout: layouts/job.njk
+title: Navigating the Future of Business
+# description: The first job on the blog
+date: 2020-09-01
 ---
 
 # Navigating the Future of Business: Key Strategies for Success
@@ -46,6 +46,5 @@ For example, Google’s investment in employee development and well-being initia
 ## Conclusion
 
 As businesses look to the future, embracing digital transformation, focusing on sustainability, enhancing customer experiences, and investing in employee development will be crucial for success. By implementing these strategies, companies can navigate the complexities of the modern marketplace and position themselves for long-term growth and profitability. Adapting to change is not just about survival; it’s about thriving in an ever-evolving business landscape.
-
 
 
