@@ -1,13 +1,20 @@
-<ul>
-  {% for job in jobslist %}
-    <li>
-      <strong>
-        <a href="{{ job.url | url }}">{{ job.data.title }}</a>
-      </strong>
-      -
-      <time datetime="{{ job.date | htmlDateString }}">{{ job.date | readableDate }}</time>
-      -
-      <span>{{ job.data.description }}</span>
-    </li>
+
+  <h1 class="w-full text-center text-6xl font-bold">Work</h1>
+  <div class="container mx-auto p-6 shadow-xl rounded-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {% for job in jobslist %}
+    <div class="card shadow-xl">
+        <figure><img src="{{job.data.preview}}" alt="" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">{{job.data.title}}</h2>          
+          <div class="card-actions justify-start">
+            <a href="{{job.url}}" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
   {% endfor %}
-</ul>
+    </div>
+  </div>
+
+
+

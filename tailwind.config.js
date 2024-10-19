@@ -7,7 +7,7 @@ module.exports = {
     "./src/index.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
   ] , 
   daisyui: {
-    themes: ["default"],
+    themes: ["light"],
   },
   plugins: [
     require("daisyui"),

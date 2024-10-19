@@ -8,12 +8,7 @@
     <script>  
       // Remove this script if you don't need the dark mode toggle  
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-        
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
+      
 
       const toggleDarkMode = function(){
         if (document.documentElement.classList.contains('dark')) {
@@ -33,80 +28,65 @@
 
   </head>
   <body class="dark:bg-zinc-800 dark:text-white">
-    <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-2 border-black gap-5 shadow-xl m-5 rounded-full top-3 sticky bg-white">
-  <a href="/" class="font-semibold text-xl tracking-tight">To Do MCN</a>
-
-  
-  <ul class="flex items-center gap-3 flex-wrap">
-    
-      <li class="inline">
-        <a
-          href="/"
-          class="uppercase text-sm py-1 px-2 rounded btn btn-ghost
-          
-            font-bold hover:bg-black/20
-          ">
-          Home
-        </a>
-      </li>
-    
-      <li class="inline">
-        <a
-          href="/news/"
-          class="uppercase text-sm py-1 px-2 rounded btn btn-ghost
-          
-            text-zinc-500 hover:bg-black/20
-          ">
-          News
-        </a>
-      </li>
-    
-      <li class="inline">
-        <a
-          href="/work/"
-          class="uppercase text-sm py-1 px-2 rounded btn btn-ghost
-          
-            text-zinc-500 hover:bg-black/20
-          ">
-          Work
-        </a>
-      </li>
-    
-      <li class="inline">
-        <a
-          href="/contact/"
-          class="uppercase text-sm py-1 px-2 rounded btn btn-ghost
-          
-            text-zinc-500 hover:bg-black/20
-          ">
-          Contact
-        </a>
-      </li>
     
 
-  </ul>
 
-  
-  
-
-</nav>
-
+<div class="navbar bg-base-100 w-full sticky top-0 border-b z-10">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        
+        
+          <li><a href="/">Home</a></li>          
+        
+          <li><a href="/news/">News</a></li>          
+        
+          <li><a href="/work/">Work</a></li>          
+        
+          <li><a href="/contact/">Contact</a></li>          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-center">
+    <a class="btn btn-ghost text-5xl font-extrabold inline-block bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-pink-500">ToDo MCN</a>
+  </div>
+  <div class="navbar-end">
+    
+  </div>
+</div>
     <main class="p-12 ">
       
       
 <div class="w-full h-full container mx-auto flex flex-col gap-32">
   <div class="size-full container mx-auto flex flex-col gap-24">
-    <h1 class="font-bold text-7xl">
+    <h1 class="w-full font-bold text-7xl text-center">
       We help fitness creators and brands thrive online.
     </h1>
-    <h4 class="text-xl font-light leading-9 tracking-normal">
+    <h4 class="text-lg font-light leading-9 tracking-normal text-justify">
       <b class="font-bold">@ToDo Fitness MCN </b>, we connect fitness brands with top influencers and produce high-quality, engaging content across a wide variety of social media platforms. Our mission is to help creators build strong, impactful online presences. From influencer partnerships to content that motivates and inspires, we’re here to support your growth every step of the way.
     </h4>
   </div>
   <div class="size-full overlfow-x-auto ">
     
-<div class="w-full h-full container mx-auto flex items-center justify-center gap-32">
-  <div class="size-full container mx-auto flex gap-24 items-center justify-center">
+<div class="w-full h-full container mx-auto flex items-center justify-center gap-32 overflow-x-auto px-3">
+  <div class="size-full container mx-auto flex gap-24 items-center justify-start lg:justify-center">
     <div class="">
         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="none" viewBox="0 0 48 48">
         <path fill="#000" d="M40.8 35.07c0 1.254-.68 3.669-2.21 4.995-.305.241-.611.105-.477-.247.446-1.117 1.464-3.703.987-4.298-.338-.452-1.733-.418-2.922-.314-.543.07-1.02.103-1.39.181-.343.028-.411-.281-.069-.523.447-.323.94-.572 1.462-.738 1.932-.593 4.165-.236 4.486.143.06.073.133.278.133.8Zm-3.23 2.23c-.443.348-.908.665-1.392.949-3.566 2.199-8.185 3.351-12.195 3.351-6.457 0-12.232-2.444-16.614-6.534-.377-.314-.066-.77.374-.522 4.722 2.828 10.565 4.54 16.614 4.54 3.808 0 7.91-.732 11.82-2.305.275-.105.58-.248.848-.348.616-.285 1.159.417.546.869ZM27.205 18.275c0-1.796.07-2.853-.51-3.76-.514-.747-1.4-1.196-2.636-1.125-1.34.076-2.78.978-3.147 2.632-.072.38-.287.752-.734.833l-4.091-.535c-.293-.069-.738-.298-.592-.898.879-4.745 4.83-6.4 8.566-6.622h.877c2.05 0 4.684.602 6.37 2.18 2.045 1.96 1.826 4.592 1.826 7.452v6.773c0 2.032.803 2.932 1.61 3.992.218.377.294.822-.074 1.13-1.059.968-2.133 1.92-3.221 2.852-.294.23-.822.254-1.025.078-1.294-1.113-1.61-1.73-2.411-2.86-1.395 1.502-2.566 2.332-3.959 2.782-.98.255-1.987.38-2.997.373-3.512 0-6.293-2.248-6.293-6.693 0-3.534 1.832-5.937 4.537-7.073 2.705-1.139 6.637-1.501 7.904-1.508m-.802 8.956c.874-1.505.802-2.736.802-5.494-1.096 0-2.195.078-3.144.307-1.756.523-3.15 1.656-3.15 4.062 0 1.88.954 3.16 2.564 3.16.221 0 .416-.028.584-.078 1.126-.32 1.828-.9 2.344-1.957Z"/>
@@ -130,50 +110,49 @@
 </div>
 
   </div>
-  <div class="w-full h-full rounded-2xl flex flex-col p-3 gap-3 bg-gray-300/40">
-    <div class="flex gap-5 w-full h-96">
-      <div class="w-2/3 h-full bg-white rounded-2xl flex flex-col items-start justify-center border-2 border-white">        
-        <div class="h-96 p-5 flex flex-col justify-between gap-10">
-          <div>
-            <h1 class="w-full break-normal text-6xl font-extrabold text-black">1. Who are we ?</h1>
-          </div>          
-          <ul class="flex flex-col gap-2 list-disc px-5">
-            <li class="w-full break-normal text-xl font-normal text-black">MCN organization with annual sales nearing $150 million.</li>        
-            <li class="w-full break-normal text-xl font-normal text-black">Backed by over 2,000 suppliers and partners.</li>
-            <li class="w-full break-normal text-xl font-normal text-black">More than 5 million feet of overseas warehouses in North America.</li>
-            <li class="w-full break-normal text-xl font-normal text-black">Plus live broadcast and after-sales services.</li>
+
+     
+
+    <div class="shadow-[5px_14px_240px_84px_rgba(226,_149,_75,_0.96)] bg-[rgba(226,_149,_75,_0.6)] size-full rounded-2xl z-0 p-5 gap-5">
+      <!-- Responsive Grid -->
+      <div class="size-full grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 lg:grid-flow-row gap-5">
+        <!-- Card 1: Top left -->
+        <div class="z-10 rounded-2xl flex flex-col items-start justify-between border-2 p-5 h-auto gap-14 bg-white">
+          <h1 class="w-full break-normal text-4xl lg:text-6xl font-extrabold text-justify">1. Who are we?</h1>
+          <ul class="flex flex-col gap-2 list-disc px-5 mt-5 text-justify">
+            <li class="w-full break-normal text-lg font-normal">MCN organization with annual sales nearing $150 million.</li>
+            <li class="w-full break-normal text-lg font-normal">Backed by over 2,000 suppliers and partners.</li>
+            <li class="w-full break-normal text-lg font-normal">More than 5 million feet of overseas warehouses in North America.</li>
+            <li class="w-full break-normal text-lg font-normal">Plus live broadcast and after-sales services.</li>
           </ul>
         </div>
-      </div>
-      <div class="w-1/3 h-full p-3 bg-white rounded-2xl flex flex-col items-start justify-center border-2 border-white">
-        <div class="h-96 p-5 flex flex-col justify-between gap-10">
-          <div>
-            <h1 class="w-full break-normal text-6xl font-extrabold text-black">2. We offer</h1>
-          </div>
-          <ul class="flex flex-col gap-2 list-disc px-5">
-            <li class="w-full break-normal text-xl font-normal text-black">Generous sales commissions.</li>        
-            <li class="w-full break-normal text-xl font-normal text-black">High-quality goods.</li>
-            <li class="w-full break-normal text-xl font-normal text-black">Personalized account.</li>
+        
+        <!-- Card 2: Top right -->
+        <div class="rounded-2xl flex flex-col items-start justify-between border-2 p-5 h-auto bg-white">
+          <h1 class="w-full break-normal text-4xl lg:text-6xl font-extrabold">2. We offer:</h1>
+          <ul class="flex flex-col gap-2 list-disc px-5 mt-5">
+            <li class="w-full break-normal text-lg font-normal">Generous sales commissions.</li>
+            <li class="w-full break-normal text-lg font-normal">High-quality goods.</li>
+            <li class="w-full break-normal text-lg font-normal">Personalized account.</li>
           </ul>
         </div>
-      </div>
-    </div> 
-    <div class="w-full h-full bg-white rounded-2xl border-2 border-white">
-      <div class="h-96 p-5 flex flex-col justify-between gap-10">
-          <div>
-            <h1 class="w-full break-normal text-6xl font-extrabold text-black">3. Line of Business</h1>
-          </div>          
-          <div class="flex flex-col gap-5 list-disc px-1">
-            <h3 class="w-full break-normal text-xl font-normal text-black leading-relaxed">
-              We're partnering with TikTok to secure higher commissions for creators and are looking for influencers to join us and share TikTok's official bonuses. You'll have access to multiple sales channels through live broadcasts, short videos, and social media. As the saying goes...              
-            </h3>                    
-            <h1 class="w-full break-normal text-2xl font-serif font-bold text-black py-3">
+
+        <!-- Card 3: Full row below -->
+        <div class="lg:col-span-2 rounded-2xl border-2 p-5 h-auto flex flex-col items-start justify-between bg-white">
+          <h1 class="w-full break-normal text-4xl lg:text-6xl font-extrabold">3. Line of Business</h1>
+          <div class="flex flex-col gap-5 px-1 mt-5">
+            <h3 class="w-full break-normal text-lg font-normal leading-relaxed">
+              We're partnering with TikTok to secure higher commissions for creators and are looking for influencers to join us and share TikTok's official bonuses. You'll have access to multiple sales channels through live broadcasts, short videos, and social media. As the saying goes...
+            </h3>
+            <h1 class="w-full break-normal text-2xl font-serif font-bold py-3">
               “Try not to become a man of success but rather try to become a man of value.”
             </h1>
           </div>
         </div>
+      </div>
     </div>
-  </div>  
+  
+  
 </div>
 
     </main>

@@ -1,13 +1,22 @@
-<ul>
-  {% for post in postslist %}
-    <li>
-      <strong>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </strong>
-      -
-      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      -
-      <span>{{ post.data.description }}</span>
-    </li>
+
+  <h1 class="w-full text-center text-6xl font-bold py-5">News</h1>
+  <div class="container mx-auto p-6 shadow-xl rounded-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {% for post in postslist %}
+      <div class="card bg-base-80 image-full w-auto shadow-xl">
+  <figure>
+    <img
+      src="{{post.data.preview}}"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body flex flex-col justify-between">
+    <h2 class="card-title">{{post.data.title}}</h2>    
+    <div class="card-actions justify-start">
+      <a href="{{post.url}}" class="btn btn-primary">Learn more...</a>
+    </div>
+  </div>
+</div>
   {% endfor %}
-</ul>
+    </div>
+  </div>
+

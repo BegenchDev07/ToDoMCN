@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: My second post
-description: The second post on the blog
+preview: https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 date: 2020-09-01
 ---
 
